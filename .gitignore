@@ -1,0 +1,12 @@
+**/node_modules/**
+package-lock.json
+.idea
+src/**/*.js
+cypress/api/**/*.js
+cypress/data/**/*.js
+cypress/integration/**/*.js
+cypress/support/pages/**/*.js
+cypress/support/webElements/**/*.js
+cypress/utilities/**/*.js
+**/videos/*
+

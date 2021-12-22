@@ -1,0 +1,28 @@
+{
+  "name": "test_framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "build": "tsc",
+    "on-chrome": "npx cypress run --browser chrome --headed",
+    "test:cypress": "npm install && npm-run-all build on-chrome --continue-on-error",
+    "test:jest": "npm install && npm-run-all build && jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "cypress": "^9.1.1",
+    "cypress-xpath": "^1.6.2",
+    "jest": "^27.4.5",
+    "jsonschema": "^1.4.0",
+    "npm-run-all": "^4.1.5",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  }
+}

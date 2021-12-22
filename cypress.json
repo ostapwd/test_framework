@@ -1,0 +1,12 @@
+{
+  "env": {
+    "API_HOST": "https://jsonplaceholder.typicode.com",
+    "UI_HOST": "https://www.saucedemo.com/"
+  },
+  "testFiles": "**/*.ts",
+  "defaultCommandTimeout": 60000,
+  "responseTimeout": 60000,
+  "chromeWebSecurity": false,
+  "watchForFileChanges": false,
+  "pageLoadTimeout": 60000
+}
