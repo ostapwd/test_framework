@@ -25,6 +25,12 @@ describe("Comments API tests", () => {
         }
 
         it("POST a new comment", () => {
+            let newComment = {
+                "postId": 1,
+                "name": "Test comment name",
+                "email": "testemail@gmail.com",
+                "body": "Test comment body"
+            }
             apiController.addComment(newComment).then( response => {
                 expect(response.status).to.be.equal(201);
 

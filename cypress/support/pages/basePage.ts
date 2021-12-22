@@ -3,18 +3,15 @@ export default abstract class BasePage {
   protected constructor() {
   }
 
-  waitForPageToBeLoaded() {
+  protected waitForPageToBeLoaded() {
     cy.wait(1000);
 
     return this;
   }
 
-  waitForSpinnerToDisappear() {
+  protected goto(url) {
+    cy.visit(url, { failOnStatusCode: false });
 
     return this;
-  }
-
-  goto(url) {
-    cy.visit(url, { failOnStatusCode: false });
   }
 }

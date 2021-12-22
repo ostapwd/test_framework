@@ -8,5 +8,8 @@ cypress/integration/**/*.js
 cypress/support/pages/**/*.js
 cypress/support/webElements/**/*.js
 cypress/utilities/**/*.js
+cypress/reports/**/*.*
+cypress/screenshots/**/*.*
+src/reports/**/*.*
 **/videos/*
 

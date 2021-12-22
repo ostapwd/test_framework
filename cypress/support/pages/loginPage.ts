@@ -2,23 +2,23 @@ import BasePage from "./basePage";
 import inventoryPage from "./inventoryPage";
 
 class LoginPage extends BasePage {
-  constructor() {
+  public constructor() {
     super();
   }
 
-  logoLabel() { return cy.get(".login_logo"); }
-  usernameInput() { return cy.get("#user-name"); }
-  passwordInput() { return cy.get("#password"); }
-  loginButton() { return cy.get("#login-button"); }
+  private usernameInput() { return cy.get("#user-name"); }
+  private passwordInput() { return cy.get("#password"); }
+  private loginButton() { return cy.get("#login-button"); }
+  public loginPageLogoLabel() { return cy.get(".login_logo"); }
 
-  waitForPageToBeLoaded() {
+  public waitForPageToBeLoaded() {
     super.waitForPageToBeLoaded();
-    this.logoLabel().should("be.visible");
+    this.loginPageLogoLabel().should("be.visible");
 
     return this;
   }
 
-  loginToTheApp(user) {
+  public loginToTheApp(user) {
     this.usernameInput().clear().type(user.username);
     cy.wait(1000);
     this.passwordInput().clear().type(user.password);
@@ -29,14 +29,8 @@ class LoginPage extends BasePage {
     return inventoryPage;
   }
 
-  open() {
+  public open() {
     this.goto(Cypress.env("UI_HOST"));
-
-    return this;
-  }
-
-  continue() {
-    this.waitForSpinnerToDisappear();
 
     return this;
   }

@@ -3,24 +3,24 @@ import {SearchStrategy} from "../webElements/searchStrategy";
 import {Menu} from "../webElements/menu";
 
 class InventoryPage extends BasePage {
-  constructor() {
+  public constructor() {
     super();
   }
 
-  menu() { return new Menu(SearchStrategy.CSS, "#menu_button_container"); }
-  logoLabel() { return cy.get(".app_logo"); }
-  productsLabel() { return cy.get(".header_secondary_container > .title"); }
-  cartNumberLabel() { return cy.xpath(".//*[contains(@class, 'shopping_cart_badge')]"); }
-  products() { return cy.get(".inventory_item button[id^=add-to-cart]"); }
+  private products() { return cy.get(".inventory_item button[id^=add-to-cart]"); }
+  public inventoryPageLogoLabel() { return cy.get(".app_logo"); }
+  public productsLabel() { return cy.get(".header_secondary_container > .title"); }
+  public cartNumberLabel() { return cy.xpath(".//*[contains(@class, 'shopping_cart_badge')]"); }
+  public menu() { return new Menu(SearchStrategy.CSS, "#menu_button_container"); }
 
-  waitForPageToBeLoaded() {
+  public waitForPageToBeLoaded() {
     super.waitForPageToBeLoaded();
-    this.logoLabel().should("be.visible");
+    this.inventoryPageLogoLabel().should("be.visible");
 
     return this;
   }
 
-  addToCartAllProducts() {
+  public addToCartAllProducts() {
     cy.wait(2000);
     this.products().each((element, i, array) => {
       array[i].click();

@@ -3,13 +3,13 @@
 import {WebElement} from "./webElement";
 
 export class Menu extends WebElement {
-  constructor(searchStrategy: any, locator: string) {
+  public constructor(searchStrategy: any, locator: string) {
     super(searchStrategy, locator);
   }
 
-  expandMenuButton() { return cy.get("#react-burger-menu-btn"); }
-  logoutMenuItemLabel() { return cy.get("#logout_sidebar_link"); }
-  menuContainer() { return cy.get(".bm-menu-wrap"); }
+  private expandMenuButton() { return cy.get("#react-burger-menu-btn"); }
+  private logoutMenuItemLabel() { return cy.get("#logout_sidebar_link"); }
+  private menuContainer() { return cy.get(".bm-menu-wrap"); }
 
   private expandMenuIfHidden() {
     this.menuContainer().invoke("attr", "aria-hidden").then(elementAttribute => {
@@ -21,7 +21,7 @@ export class Menu extends WebElement {
     });
   }
 
-  logout() {
+  public logout() {
     this.expandMenuIfHidden();
     this.logoutMenuItemLabel().click();
   }
