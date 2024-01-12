@@ -6,7 +6,9 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
   testMatch: [
-    '**/tests/**/*.test.ts'
+    '**/tests/**/*.test.ts',
+    '**/testsSteps/**/*.steps.js',
+    '**/*.steps.js'
   ],
   "reporters": [
     "default",
